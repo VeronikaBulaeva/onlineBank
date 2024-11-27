@@ -10,11 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.7",
+    "postcss-selector-parser": "^7.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.0.13",
-    "react-router-dom": "^6.27.0",
-    "postcss-selector-parser": "^7.0.0"
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

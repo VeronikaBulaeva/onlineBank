@@ -1,0 +1,69 @@
+.inputBox {
+    display: grid;
+    gap: 12px;
+    position: relative;
+}
+
+.inputBox__img {
+    position: absolute;
+    left: 32px;
+    top: 27px;
+}
+
+input {
+    border: none;
+    border-radius: 20px;
+    padding: 32px 42px 32px 72px;
+    min-height: 90px;
+    min-width: 524px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 20px 0 rgba(54, 58, 120, 0.1);
+}
+
+::placeholder {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: rgba(144, 146, 176, 1);
+}
+
+.inputBox__button {
+    display: flex;
+    gap: 12px;
+    padding-inline: 12px 32px;
+    position: absolute;
+    right: 32px;
+    top: 20px;
+    background-color: rgba(104, 109, 241, 1);
+}
+
+.inputBox__button p {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 600px) {
+    input {
+        min-height: auto;
+        min-width: auto;
+    }
+
+    .inputBox__button {
+        position: initial;
+        max-width: 100%;
+    }
+
+    .inputBox__img {
+        top: 24px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    input {
+        padding: 22px 22px 22px 72px;
+    }
+}
