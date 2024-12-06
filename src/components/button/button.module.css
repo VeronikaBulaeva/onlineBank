@@ -1,0 +1,35 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    height: 50px;
+    padding: 8px;
+    background-color: rgba(0, 60, 255, 1);
+    color: rgba(255, 255, 255, 1);;
+
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    text-align: center;
+
+    transition: background-color 0.5s ease-in-out;
+}
+
+.button:hover {
+    background: rgba(119, 150, 192, 1);
+}
+
+.radius8 {
+    border-radius: 8px;
+}
+
+.radius16 {
+    border-radius: 16px;
+}
+
+.radius20 {
+    border-radius: 20px;
+}

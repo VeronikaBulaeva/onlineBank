@@ -1,0 +1,154 @@
+.homePage {
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-inline: 8px;
+    padding-block: 98px;
+    display: grid;
+    gap: 48px;
+}
+
+.cardDesign {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardDesign__choose {
+    display: grid;
+    gap: 36px;
+    max-width: 622px;
+}
+
+.cardDesign__choose h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 50px;
+    color: rgba(28, 28, 30, 1);;
+}
+
+.cardDesign__design {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.usedFunctions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usedFunctions__info {
+    display: grid;
+    gap: 20px;
+}
+
+.usedFunctions__info h2 {
+    font-family: "Rubik", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 50px;
+    color: rgba(11, 19, 42, 1);
+}
+
+.usedFunctions__info p {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: rgba(79, 86, 101, 1);
+    max-width: fit-content;
+}
+
+.info__list {
+    display: grid;
+    gap: 12px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.list__items {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.ourServices {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+}
+
+.ourServices h3 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 50px;
+    text-align: center;
+    color: rgba(28, 28, 28, 1);
+}
+
+.ourServices p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 50px;
+    text-align: center;
+    color: rgba(28, 28, 28, 1);
+    padding-bottom: 40px;
+}
+
+.subscribe {
+    display: grid;
+    justify-items: center;
+    gap: 30px;
+}
+
+.subscribe__support {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+    color: rgba(235, 128, 29, 1);
+}
+
+.subscribe__newsletter {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    color: rgba(28, 28, 30, 1);
+}
+
+.subscribe__banknews {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0.02em;
+    color: rgba(28, 28, 30, 1);
+}
+
+@media screen and (max-width: 920px) {
+    .homePage {
+        padding-block: 48px;
+    }
+
+    .cardDesign {
+        display: grid;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .usedFunctions {
+        justify-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .usedFunctions__info {
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .usedFunctions__info {
+        justify-items: flex-start;
+    }
+}
