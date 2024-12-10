@@ -7,6 +7,7 @@ export enum ButtonRadius {
   eight = "eight",
   sixteen = "sixteen",
   twenty = "twenty",
+  fifty = "fifty",
 }
 
 export interface ButtonProps {
@@ -15,4 +16,5 @@ export interface ButtonProps {
   className?: string;
   link?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }

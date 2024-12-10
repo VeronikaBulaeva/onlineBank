@@ -10,6 +10,7 @@ const DefaultButton: FC<PropsWithChildren<ButtonProps>> = ({
   radius,
   children,
   onClick,
+  disabled,
 }) => {
   const getClassName = () => {
     switch (radius) {
@@ -19,6 +20,8 @@ const DefaultButton: FC<PropsWithChildren<ButtonProps>> = ({
         return styles.radius16;
       case ButtonRadius.twenty:
         return styles.radius20;
+      case ButtonRadius.fifty:
+        return styles.radius50;
       default:
         return styles.radius16;
     }
@@ -35,6 +38,7 @@ const DefaultButton: FC<PropsWithChildren<ButtonProps>> = ({
     <button
       onClick={onClick}
       className={`${styles.button} ${className} ${getClassName()}`}
+      disabled={disabled}
     >
       {children}
     </button>
