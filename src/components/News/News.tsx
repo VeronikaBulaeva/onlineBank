@@ -12,7 +12,7 @@ const News: FC<NewsData> = ({ articles }) => {
 
   const ref = useRef<number | null>(null);
   const isSmallScreen = window.innerWidth <= 600;
-  const lastIndex = isSmallScreen ? articles.length : articles.length - 3;
+  const lastIndex = isSmallScreen ? articles.length - 1 : articles.length - 3;
   const startSlide = activeIndex === 0;
   const endSlide = activeIndex === lastIndex;
   const isEdge = startSlide || endSlide;
