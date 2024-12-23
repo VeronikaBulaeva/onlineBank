@@ -7,7 +7,7 @@ import SubscribeNewsletter from "@/components/SubscribeNewsletter/SubscribeNewsl
 import UsedFunctions from "@/components/UsedFunctions/UsedFunctions.tsx";
 import CardDesign from "@/components/CardDesign/CardDesign.tsx";
 import { NewsProps } from "@/components/types.ts";
-import ExchangeRate from "@/components/exchange-rate/ExchangeRate.tsx";
+import ExchangeRate from "@/components/ExchangeRate/ExchangeRate.tsx";
 
 const HomePage: FC = () => {
   const [data, setData] = useState<NewsProps[]>([]);

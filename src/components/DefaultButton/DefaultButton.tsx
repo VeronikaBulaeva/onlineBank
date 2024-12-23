@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
-import styles from "./button.module.css";
+import styles from "./DefaultButton.module.css";
 import { ButtonProps, ButtonRadius } from "./types";
 
 const DefaultButton: FC<PropsWithChildren<ButtonProps>> = ({

@@ -1,7 +1,7 @@
 import { FC, useRef } from "react";
 import styles from "./SubscribeInput.module.css";
-import DefaultButton from "@/components/button/button.tsx";
-import { ButtonRadius, ButtonType } from "@/components/button/types.ts";
+import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
+import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
 import Subscribe from "@/assets/subscribe.svg";
 import Email from "@/assets/email.svg";
 import { sendEmail } from "@/rest/requests.ts";

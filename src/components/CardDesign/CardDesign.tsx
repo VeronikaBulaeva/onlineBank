@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./CardDesign.module.css";
-import DefaultButton from "@/components/button/button.tsx";
-import { ButtonRadius, ButtonType } from "@/components/button/types.ts";
+import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
+import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
 import { card } from "@/constants/constants.tsx";
 
 const CardDesign: FC = () => {

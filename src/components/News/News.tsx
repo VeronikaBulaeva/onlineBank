@@ -1,8 +1,8 @@
 import { FC, TouchEventHandler, useRef, useState } from "react";
 import NewsCard from "./NewsCard/NewsCard.tsx";
 import styles from "./News.module.css";
-import DefaultButton from "@/components/button/button.tsx";
-import { ButtonRadius, ButtonType } from "@/components/button/types.ts";
+import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
+import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
 import ArrowLeft from "@/assets/arrowLeft.svg";
 import ArrowRight from "@/assets/arrowRight.svg";
 import { NewsData } from "@/components/types.ts";

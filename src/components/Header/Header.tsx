@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./header.module.css";
-import DefaultButton from "@/components/button/button.tsx";
-import { ButtonRadius, ButtonType } from "@/components/button/types.ts";
+import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
+import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
 import { Link } from "react-router-dom";
 import { headerLinks } from "@/constants/constants.tsx";
 
