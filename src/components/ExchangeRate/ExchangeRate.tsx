@@ -18,7 +18,6 @@ const ExchangeRate: FC = () => {
     intervalId.current = setInterval(
       () => {
         getData();
-        console.log("interval");
       },
       15 * 60 * 1000,
     );

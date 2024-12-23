@@ -1,9 +1,6 @@
 import axios from "axios";
 import instance from "@/rest/instance.ts";
-
-export type GetCurrencyType = {
-  conversion_rates: Record<string, number>;
-};
+import { GetCurrencyType, NewsData } from "@/components/types.ts";
 
 const getData = async <T>(url: string): Promise<T | undefined> => {
   try {
@@ -23,4 +20,11 @@ export const getCurrency = async () => {
 
 export const sendEmail = async (email: string) => {
   await instance.post("email", { email });
+};
+
+export const getNews = async () => {
+  const data = await getData<NewsData>(
+    `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d1cddbdf0d1a4e36adc123241e087633`,
+  );
+  return data?.articles;
 };

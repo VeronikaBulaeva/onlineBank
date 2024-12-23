@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
 import Logo from "@/assets/logo.svg";
+import { footerLinks } from "@/constants/constants.tsx";
 
 const Footer: FC = () => {
   return (
@@ -16,16 +17,11 @@ const Footer: FC = () => {
             </address>
           </div>
           <nav className={styles.footer__menu}>
-            <Link to={""}>About bank</Link>
-            <Link to={""}>Ask a Question</Link>
-            <Link to={""}>Quality of service</Link>
-            <Link to={""}>Requisites</Link>
-            <Link to={""}>Press center</Link>
-            <Link to={""}>Bank career</Link>
-            <Link to={""}>Investors</Link>
-            <Link to={""}>Analytics</Link>
-            <Link to={""}>Business and processes</Link>
-            <Link to={""}>Compliance and business ethics</Link>
+            {footerLinks.map(({ link, title }, index) => (
+              <Link to={link} key={index}>
+                {title}
+              </Link>
+            ))}
           </nav>
         </section>
         <section className={styles.footer__bottom}>

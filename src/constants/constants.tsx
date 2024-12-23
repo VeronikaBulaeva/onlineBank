@@ -37,3 +37,65 @@ export const features = [
 ];
 
 export const currency = ["USD", "EUR", "CAD", "CNY", "CHF", "SGD"];
+
+export const footerLinks = [
+  {
+    link: "",
+    title: "About bank",
+  },
+  {
+    link: "",
+    title: "Ask a Question",
+  },
+  {
+    link: "",
+    title: "Quality of service",
+  },
+  {
+    link: "",
+    title: "Requisites",
+  },
+  {
+    link: "",
+    title: "Press center",
+  },
+  {
+    link: "",
+    title: "Bank career",
+  },
+  {
+    link: "",
+    title: "Investors",
+  },
+  {
+    link: "",
+    title: "Analytics",
+  },
+  {
+    link: "",
+    title: "Business and processes",
+  },
+  {
+    link: "",
+    title: "Compliance and business ethics",
+  },
+] as const;
+
+export const headerLinks = [
+  {
+    link: "",
+    title: "Credit card",
+  },
+  {
+    link: "",
+    title: "Product",
+  },
+  {
+    link: "",
+    title: "Account",
+  },
+  {
+    link: "",
+    title: "Resources",
+  },
+] as const;

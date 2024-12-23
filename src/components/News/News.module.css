@@ -1,0 +1,52 @@
+.news__section {
+    overflow: hidden;
+    display: grid;
+    gap: 48px;
+}
+
+.news__section h2 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 50px;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+}
+
+.section__description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 50px;
+    text-align: center;
+    color: rgba(45, 55, 72, 1);
+}
+
+.news__items {
+    display: flex;
+    gap: 80px;
+    overflow: hidden;
+}
+
+.items__buttons {
+    display: flex;
+    gap: 20px;
+    justify-self: flex-end;
+}
+
+.buttonLeft {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 60, 255, 1);
+}
+
+.disabled {
+    background-color: rgb(150, 189, 244);
+}
+
+.disabled:hover {
+    background-color: rgb(150, 189, 244);
+}
+
+@media screen and (max-width: 600px) {
+    .news__items {
+    }
+}
