@@ -1,13 +1,13 @@
 import { FC, useEffect, useRef, useState } from "react";
 import styles from "./homePage.module.css";
 import Map from "@/assets/globalServices.svg";
-import News from "@/components/News/News.tsx";
 import { getNews } from "@/rest/requests.ts";
-import SubscribeNewsletter from "@/components/SubscribeNewsletter/SubscribeNewsletter.tsx";
-import UsedFunctions from "@/components/UsedFunctions/UsedFunctions.tsx";
-import CardDesign from "@/components/CardDesign/CardDesign.tsx";
 import { NewsProps } from "@/components/types.ts";
-import ExchangeRate from "@/components/ExchangeRate/ExchangeRate.tsx";
+import CardDesign from "@/components/HomePage/CardDesign/CardDesign.tsx";
+import UsedFunctions from "@/components/HomePage/UsedFunctions/UsedFunctions.tsx";
+import ExchangeRate from "@/components/HomePage/ExchangeRate/ExchangeRate.tsx";
+import News from "@/components/HomePage/News/News.tsx";
+import SubscribeNewsletter from "@/components/HomePage/SubscribeNewsletter/SubscribeNewsletter.tsx";
 
 const HomePage: FC = () => {
   const [data, setData] = useState<NewsProps[]>([]);
