@@ -33,6 +33,12 @@
     justify-self: flex-end;
 }
 
+.items__buttons button {
+    height: 64px;
+    width: 64px;
+    max-width: none;
+}
+
 .buttonLeft {
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(0, 60, 255, 1);
@@ -44,6 +50,10 @@
 
 .disabled:hover {
     background-color: rgb(150, 189, 244);
+}
+
+.radius {
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 600px) {

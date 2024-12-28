@@ -23,6 +23,10 @@
     gap: 16px;
 }
 
+.radius {
+    border-radius: 16px;
+}
+
 @media screen and (max-width: 920px) {
     .cardDesign {
         display: grid;

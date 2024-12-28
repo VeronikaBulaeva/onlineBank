@@ -1,0 +1,41 @@
+.errorInput, #errorInput {
+    display: block;
+    float: left;
+    outline: none;
+    border: 2px solid rgba(255, 86, 49, 1);
+    color: rgba(255, 86, 49, 1);
+    background: rgba(249, 245, 227, 1) url("@/assets/error.svg") no-repeat 266px center;
+}
+
+.errorMessage {
+    color: rgba(255, 86, 49, 1);
+    max-width: 296px;
+}
+
+.successInput {
+    border: 2px solid rgb(19, 211, 63) !important;
+    background: url("@/assets/success.svg") no-repeat 266px center;
+    background-size: 18px 18px;
+}
+
+.label {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: left;
+    color: rgba(26, 32, 44, 1);
+    display: grid;
+    gap: 8px;
+}
+
+.input__block {
+    display: grid;
+    gap: 4px;
+}
+
+@media screen and (max-width: 660px) {
+    .input__block {
+        width: 100%;
+    }
+}

@@ -1,0 +1,44 @@
+.cardInformation__item {
+    display: grid;
+    gap: 10px;
+}
+
+.cardInformation__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    color: rgba(61, 61, 61, 1);
+}
+
+.cardInformation__description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: rgba(61, 61, 61, 1);
+}
+
+.cardInformation__tooltip {
+    width: 170px;
+    padding: 8px;
+    top: 56px;
+    right: 5px;
+    border-radius: 2px;
+    background-color: rgba(61, 61, 61, 1);
+}
+
+.cardInformation__item:hover .cardInformation__tooltip {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    .cardInformation__item {
+        width: max-content;
+    }
+
+    .cardInformation__tooltip {
+        top: 0;
+        left: 160px;
+    }
+}

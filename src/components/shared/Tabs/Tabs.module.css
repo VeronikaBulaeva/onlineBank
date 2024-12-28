@@ -1,0 +1,26 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+}
+
+.tab {
+    border-color: transparent;
+}
+
+.activeTab {
+    border-bottom: 2px solid rgba(123, 116, 84, 1);
+}
+
+.tab, .activeTab {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: rgba(123, 116, 84, 1);
+    padding: 12px 16px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: border-color 0.5s ease-in-out;
+}

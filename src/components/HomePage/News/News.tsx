@@ -1,8 +1,8 @@
 import { FC, TouchEventHandler, useRef, useState } from "react";
 import NewsCard from "./NewsCard/NewsCard.tsx";
 import styles from "./News.module.css";
-import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
-import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
+import DefaultButton from "@/components/shared/DefaultButton/DefaultButton.tsx";
+import { ButtonType } from "@/components/shared/DefaultButton/types.ts";
 import ArrowLeft from "@/assets/arrowLeft.svg";
 import ArrowRight from "@/assets/arrowRight.svg";
 import { NewsData } from "@/components/types.ts";
@@ -33,6 +33,10 @@ const News: FC<NewsData> = ({ articles }) => {
   };
 
   const handleTouchMove: TouchEventHandler<HTMLDivElement> = (e) => {
+    if (isEdge) {
+      return null;
+    }
+
     const touchDown = ref.current;
     if (touchDown === null) {
       return;
@@ -41,16 +45,12 @@ const News: FC<NewsData> = ({ articles }) => {
     const currentTouch = e.touches[0].clientX;
     const diff = touchDown - currentTouch;
 
-    if (isEdge) {
-      return null;
-    } else {
-      if (diff > 5) {
-        nextSlide();
-      } else if (diff < -5) {
-        prevSlide();
-      }
-      ref.current = null;
+    if (diff > 5) {
+      nextSlide();
+    } else if (diff < -5) {
+      prevSlide();
     }
+    ref.current = null;
   };
 
   return (
@@ -67,29 +67,31 @@ const News: FC<NewsData> = ({ articles }) => {
         onTouchMove={handleTouchMove}
         className={styles.news__items}
       >
-        {articles.map((item, index) => (
-          <NewsCard
-            key={index + item.title}
-            {...item}
-            activeIndex={activeIndex}
-          />
-        ))}
+        {articles ? (
+          articles.map((item, index) => (
+            <NewsCard
+              key={index + item.title}
+              {...item}
+              activeIndex={activeIndex}
+            />
+          ))
+        ) : (
+          <p className={styles.section__description}>Пока новостей нет(</p>
+        )}
       </div>
       <div className={styles.items__buttons}>
         <DefaultButton
-          type={ButtonType.button}
-          radius={ButtonRadius.fifty}
+          buttonType={ButtonType.button}
           onClick={prevSlide}
-          className={startSlide ? styles.disabled : styles.buttonLeft}
+          className={`${startSlide ? styles.disabled : styles.buttonLeft} ${styles.radius}`}
           disabled={startSlide}
         >
           <img src={ArrowLeft} alt="left" />
         </DefaultButton>
         <DefaultButton
-          type={ButtonType.button}
-          radius={ButtonRadius.fifty}
+          buttonType={ButtonType.button}
           onClick={nextSlide}
-          className={endSlide ? styles.disabled : ""}
+          className={`${endSlide ? styles.disabled : ""} ${styles.radius}`}
           disabled={endSlide}
         >
           <img src={ArrowRight} alt="right" />
