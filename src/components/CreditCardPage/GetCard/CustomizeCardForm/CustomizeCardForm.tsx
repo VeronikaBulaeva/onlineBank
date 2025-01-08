@@ -93,7 +93,7 @@ const CustomizeCardForm: FC = () => {
             />
             <TextInput
               name="middleName"
-              required
+              required={false}
               placeholder="For Example Victorovich"
               className={styles.input}
               labelText="Your patronymic"

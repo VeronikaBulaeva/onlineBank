@@ -1,8 +1,9 @@
-import { FC, forwardRef } from "react";
+import { FC, forwardRef, InputHTMLAttributes } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { DefaultMaskInputType, InputType } from "@/components/types.ts";
 import styles from "./Input.module.css";
 import { IMaskInput } from "react-imask";
+import { isRequired } from "@/components/shared/Inputs/lib/isRequired.ts";
 
 interface InputMaskProps extends InputType {
   onChange: (event: { target: { name: string; value: string } }) => void;
@@ -10,13 +11,9 @@ interface InputMaskProps extends InputType {
   mask: string;
 }
 
-const DefaultMaskInput: FC<DefaultMaskInputType> = ({
-  name,
-  placeholder,
-  className,
-  mask,
-  labelText,
-}) => {
+const DefaultMaskInput: FC<
+  DefaultMaskInputType & Partial<InputHTMLAttributes<HTMLInputElement>>
+> = ({ name, placeholder, className, mask, labelText, ...rest }) => {
   const { control } = useFormContext();
 
   return (
@@ -26,7 +23,7 @@ const DefaultMaskInput: FC<DefaultMaskInputType> = ({
       render={({ field, fieldState: { error, invalid, isDirty } }) => (
         <div className={styles.input__block}>
           <label className={styles.label}>
-            {labelText}
+            <p className={`${isRequired(rest)}`}>{labelText}</p>
             <InputMask
               name={field.name}
               onChange={field.onChange}

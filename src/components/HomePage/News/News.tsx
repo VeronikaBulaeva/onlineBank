@@ -1,4 +1,11 @@
-import { FC, TouchEventHandler, useRef, useState } from "react";
+import {
+  FC,
+  TouchEventHandler,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import NewsCard from "./NewsCard/NewsCard.tsx";
 import styles from "./News.module.css";
 import DefaultButton from "@/components/shared/DefaultButton/DefaultButton.tsx";
@@ -9,9 +16,9 @@ import { NewsData } from "@/components/types.ts";
 
 const News: FC<NewsData> = ({ articles }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
 
   const ref = useRef<number | null>(null);
-  const isSmallScreen = window.innerWidth <= 600;
   const lastIndex = isSmallScreen ? articles.length - 1 : articles.length - 3;
   const startSlide = activeIndex === 0;
   const endSlide = activeIndex === lastIndex;
@@ -52,6 +59,23 @@ const News: FC<NewsData> = ({ articles }) => {
     }
     ref.current = null;
   };
+
+  const resizeListener = useCallback(
+    (event: UIEvent) => {
+      const checkIsSmallScreen = (event.view?.innerWidth ?? 0) <= 600;
+      if (checkIsSmallScreen !== isSmallScreen) {
+        setIsSmallScreen(checkIsSmallScreen);
+      }
+    },
+    [isSmallScreen],
+  );
+
+  useEffect(() => {
+    document.addEventListener("resize", resizeListener);
+    return () => {
+      document.removeEventListener("resize", resizeListener);
+    };
+  }, [resizeListener]);
 
   return (
     <section className={styles.news__section}>

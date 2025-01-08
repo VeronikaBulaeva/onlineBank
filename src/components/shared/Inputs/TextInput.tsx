@@ -2,6 +2,7 @@ import { FC, InputHTMLAttributes } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { InputType } from "@/components/types.ts";
 import styles from "./Input.module.css";
+import { isRequired } from "@/components/shared/Inputs/lib/isRequired.ts";
 
 const TextInput: FC<
   InputType & Partial<InputHTMLAttributes<HTMLInputElement>>
@@ -14,8 +15,8 @@ const TextInput: FC<
       control={control}
       render={({ field, fieldState: { error, invalid, isDirty } }) => (
         <div className={styles.input__block}>
-          <label className={styles.label}>
-            {labelText}
+          <label className={`${styles.label}`}>
+            <p className={`${isRequired(rest)}`}>{labelText}</p>
             <input
               name={field.name}
               onChange={field.onChange}

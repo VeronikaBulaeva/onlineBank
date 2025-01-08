@@ -1,14 +1,12 @@
-import { FC } from "react";
+import { FC, InputHTMLAttributes } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import styles from "./Input.module.css";
 import { SelectInputType } from "@/components/types.ts";
+import { isRequired } from "@/components/shared/Inputs/lib/isRequired.ts";
 
-const SelectInput: FC<SelectInputType> = ({
-  name,
-  className,
-  labelText,
-  options,
-}) => {
+const SelectInput: FC<
+  SelectInputType & Partial<InputHTMLAttributes<HTMLInputElement>>
+> = ({ name, className, labelText, options, ...rest }) => {
   const { control } = useFormContext();
 
   return (
@@ -18,7 +16,7 @@ const SelectInput: FC<SelectInputType> = ({
       render={({ field, fieldState: { error } }) => (
         <div className={styles.input__block}>
           <label className={styles.label}>
-            {labelText}
+            <p className={`${isRequired(rest)}`}>{labelText}</p>
             <select
               name={field.name}
               id={field.name}
