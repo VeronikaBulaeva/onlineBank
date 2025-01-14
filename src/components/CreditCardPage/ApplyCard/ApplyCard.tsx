@@ -5,8 +5,12 @@ import { ButtonType } from "@/components/shared/DefaultButton/types.ts";
 import CreditCardImg from "@/assets/creditCard.png";
 import { featuresCard } from "@/constants/constants.tsx";
 import FeaturesCard from "@/components/CreditCardPage/ApplyCard/FeaturesCard/FeaturesCard.tsx";
+import { useAppSelector } from "@/app/store/hooks.ts";
+import { creditOffersSelector } from "@/app/store/slices/creditSlice.ts";
 
 const ApplyCard: FC = () => {
+  const offers = useAppSelector(creditOffersSelector);
+
   const scrollToElement = () => {
     document.getElementById("getCard")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -31,7 +35,13 @@ const ApplyCard: FC = () => {
           className={styles.applyCard__button}
           onClick={scrollToElement}
         >
-          <p>Apply for card</p>
+          <p>
+            {offers
+              ? offers.length
+                ? "Choose an offer"
+                : "Apply for card"
+              : "Continue registration"}
+          </p>
         </DefaultButton>
       </div>
       <div>

@@ -1,0 +1,57 @@
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.title {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: rgba(28, 28, 30, 1);
+}
+
+.input__block {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding-top: 16px;
+}
+
+.input {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(49, 130, 206, 1);
+    border-radius: 8px;
+    text-align: center;
+    align-content: center;
+    padding: 14px;
+
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.focus {
+    border: 1px solid rgb(29, 82, 126);
+
+}
+
+.invisible {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.error {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 86, 49, 1);
+}
