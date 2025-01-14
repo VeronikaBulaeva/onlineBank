@@ -1,6 +1,9 @@
 import { FC, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { FormFields, formSchema } from "@/constants/Schemas.ts";
+import {
+  CustomizeCardFormFields,
+  customizeCardFormSchema,
+} from "@/constants/Schemas.ts";
 import { zodResolver } from "@hookform/resolvers/zod";
 import TextInput from "@/components/shared/Inputs/TextInput.tsx";
 import styles from "./CustomizeCardForm.module.css";
@@ -12,6 +15,9 @@ import { sendPrescoringForm } from "@/rest/requests.ts";
 import Loader from "@/components/shared/Loader/Loader.tsx";
 import { selectOptions } from "@/constants/constants.tsx";
 import { PrescoringFormData } from "@/components/types.ts";
+import RangeInput from "@/components/shared/Inputs/RangeInput.tsx";
+import { useAppDispatch } from "@/app/store/hooks.ts";
+import { setCreditOffers } from "@/app/store/slices/creditSlice.ts";
 
 const defaultValues = {
   term: selectOptions[0].value,
@@ -21,27 +27,36 @@ const defaultValues = {
   email: "",
   passportSeries: "",
   passportNumber: "",
+  amount: 150000,
 };
 
 const CustomizeCardForm: FC = () => {
+  const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
-  const methods = useForm<FormFields>({
+  const methods = useForm<CustomizeCardFormFields>({
     mode: "onChange",
     reValidateMode: "onChange",
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(customizeCardFormSchema),
     defaultValues,
   });
 
   const onSubmit = async (data: PrescoringFormData) => {
     setIsLoading(true);
-    await sendPrescoringForm({
+    const res = await sendPrescoringForm({
       ...data,
       birthdate: data.birthdate.split("/").reverse().join("-"),
     }).finally(() => setIsLoading(false));
+    if (res.status === 200) {
+      dispatch(setCreditOffers(res.data));
+    }
   };
 
-  const amount = methods.watch("amount");
+  const amount = methods.watch("amount").toLocaleString();
+
+  const numberWithSpaces = (number: number | string) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
 
   return (
     <FormProvider {...methods}>
@@ -59,19 +74,22 @@ const CustomizeCardForm: FC = () => {
               <p className={styles.step__text}>Step 1 of 5</p>
             </div>
             <div className={styles.input__block}>
-              <TextInput
+              <RangeInput
                 name="amount"
-                required
+                required={false}
                 placeholder="Select amount"
-                className={styles.input}
+                amount={numberWithSpaces(amount)}
                 labelText="Select amount"
-                type="number"
+                min={15000}
+                max={600000}
+                step={15000}
+                defaultValue={150000}
               />
             </div>
           </div>
           <div className={styles.amount__block}>
             <p className={styles.block__title}>You have chosen the amount</p>
-            <p className={styles.amount__text}>{amount || "0"} ₽</p>
+            <p className={styles.amount__text}>{numberWithSpaces(amount)} ₽</p>
           </div>
         </div>
         <div className={styles.form__bottom}>

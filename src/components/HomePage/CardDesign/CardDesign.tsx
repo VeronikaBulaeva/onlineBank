@@ -3,6 +3,7 @@ import styles from "./CardDesign.module.css";
 import DefaultButton from "@/components/shared/DefaultButton/DefaultButton.tsx";
 import { ButtonType } from "@/components/shared/DefaultButton/types.ts";
 import { card } from "@/constants/constants.tsx";
+import { CREDIT_CARD_ROUTE } from "@/constants/routes.ts";
 
 const CardDesign: FC = () => {
   return (
@@ -12,7 +13,7 @@ const CardDesign: FC = () => {
         <DefaultButton
           buttonType={ButtonType.link}
           className={styles.radius}
-          link={""}
+          link={CREDIT_CARD_ROUTE}
         >
           Choose the card
         </DefaultButton>

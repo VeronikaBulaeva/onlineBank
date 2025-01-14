@@ -2,9 +2,13 @@ import { FC } from "react";
 import styles from "./GetCard.module.css";
 import Divider from "@/components/shared/Divider/Divider.tsx";
 import { getCardInfo } from "@/constants/constants.tsx";
-import CustomizeCardForm from "@/components/CreditCardPage/GetCard/CustomizeCardForm/CustomizeCardForm.tsx";
+import { useAppSelector } from "@/app/store/hooks.ts";
+import { creditOffersSelector } from "@/app/store/slices/creditSlice.ts";
+import getOffersContent from "./getOffersContent.tsx";
 
 const GetCard: FC = () => {
+  const creditOffers = useAppSelector(creditOffersSelector);
+
   return (
     <section className={styles.getCard} id="getCard">
       <h2 className={styles.getCard__title}>How to get a card</h2>
@@ -21,7 +25,7 @@ const GetCard: FC = () => {
           </div>
         ))}
       </div>
-      <CustomizeCardForm />
+      {getOffersContent(creditOffers)}
     </section>
   );
 };

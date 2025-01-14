@@ -59,6 +59,18 @@
     color: rgba(0, 0, 0, 1);
 }
 
+.offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.email__block {
+    border: 1px solid rgba(91, 53, 213, 1);
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 1150px) {
     .getCard__block {
         gap: 10px;
@@ -75,5 +87,11 @@
         gap: 18px;
         display: grid;
         justify-content: center;
+    }
+
+    .offers {
+        display: grid;
+        justify-items: center;
+        justify-content: stretch;
     }
 }

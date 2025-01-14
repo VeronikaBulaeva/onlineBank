@@ -9,7 +9,7 @@ export const textSchema = z
   .regex(/^[-а-яА-ЯёЁa-zA-Z\s]+$/, "Значение должно содержать только буквы")
   .trim();
 
-export const formSchema = z
+export const customizeCardFormSchema = z
   .object({
     amount: z.coerce
       .number({ message: "Обязательное поле" })
@@ -57,4 +57,45 @@ export const formSchema = z
     }
   });
 
-export type FormFields = z.infer<typeof formSchema>;
+export const selectSchema = z.string({ message: "Select one of the options" });
+
+export const applicationIdFormSchema = z
+  .object({
+    gender: selectSchema,
+    maritalStatus: selectSchema,
+    dependentAmount: z.string().min(1, "Required field"),
+    passportIssueDate: z
+      .string({ message: "Required field" })
+      .regex(
+        /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/(\d{4})$/,
+        "Incorrect date of passport issue date",
+      ),
+    passportIssueBranch: z.string().min(7, "The series must be 6 digits"),
+    employmentStatus: selectSchema,
+    employerINN: z.string().min(12, "Department code must be 12 digits"),
+    salary: z.string({ message: "Enter your salary" }),
+    position: selectSchema,
+    workExperienceTotal: z
+      .string()
+      .min(1, "Enter your work experience total")
+      .max(2, "The number must be two digits."),
+    workExperienceCurrent: z
+      .string()
+      .min(1, "Enter your work experience current")
+      .max(2, "The number must be two digits."),
+  })
+  .superRefine((arg, ctx) => {
+    const [day, month, year] = arg.passportIssueDate.split("/");
+    const date = new Date(+year, +month - 1, +day);
+
+    if (date.getTime() >= new Date().getTime()) {
+      ctx.addIssue({
+        message: "Дата не может быть больше сегодняшней",
+        path: ["passportIssueDate"],
+        code: z.ZodIssueCode.custom,
+      });
+    }
+  });
+
+export type CustomizeCardFormFields = z.infer<typeof customizeCardFormSchema>;
+export type ApplicationIdFormFields = z.infer<typeof applicationIdFormSchema>;
