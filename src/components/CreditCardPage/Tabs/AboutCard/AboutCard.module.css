@@ -1,0 +1,68 @@
+.aboutCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 48px;
+    opacity: 0;
+    animation: ani 1s forwards;
+}
+
+@keyframes ani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.aboutCard__item {
+    display: grid;
+    gap: 16px;
+    padding: 32px;
+    width: 630px;
+    height: 236px;
+    border-radius: 28px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 0 8px 0 rgba(0, 0, 0, 0.08);
+    background-color: rgba(234, 236, 238, 1);
+}
+
+.aboutCard__item:nth-child(even) {
+    background-color: rgba(127, 146, 172, 0.7);
+}
+
+.aboutCard__item:nth-child(-n + 3) {
+    width: 406px;
+}
+
+.item__title {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0.02em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.item__description {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 1300px) {
+    .aboutCard {
+        gap: 20px;
+        padding-top: 24px;
+    }
+
+    .aboutCard__item:nth-child(-n + 3), .aboutCard__item {
+        width: 100%;
+        height: auto;
+        padding: 18px;
+    }
+}

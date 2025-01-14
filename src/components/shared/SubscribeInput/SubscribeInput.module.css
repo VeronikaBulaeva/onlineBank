@@ -10,7 +10,7 @@
     top: 27px;
 }
 
-input {
+.input {
     border: none;
     border-radius: 20px;
     padding: 32px 42px 32px 72px;
@@ -36,6 +36,7 @@ input {
     right: 32px;
     top: 20px;
     background-color: rgba(104, 109, 241, 1);
+    border-radius: 20px;
 }
 
 .inputBox__button p {
@@ -47,7 +48,7 @@ input {
 }
 
 @media screen and (max-width: 600px) {
-    input {
+    .input {
         min-height: auto;
         min-width: auto;
     }
@@ -63,7 +64,7 @@ input {
 }
 
 @media screen and (max-width: 370px) {
-    input {
+    .input {
         padding: 22px 22px 22px 72px;
     }
 }

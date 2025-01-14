@@ -1,17 +1,24 @@
-import { FC, TouchEventHandler, useRef, useState } from "react";
+import {
+  FC,
+  TouchEventHandler,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import NewsCard from "./NewsCard/NewsCard.tsx";
 import styles from "./News.module.css";
-import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
-import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
+import DefaultButton from "@/components/shared/DefaultButton/DefaultButton.tsx";
+import { ButtonType } from "@/components/shared/DefaultButton/types.ts";
 import ArrowLeft from "@/assets/arrowLeft.svg";
 import ArrowRight from "@/assets/arrowRight.svg";
 import { NewsData } from "@/components/types.ts";
 
 const News: FC<NewsData> = ({ articles }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
 
   const ref = useRef<number | null>(null);
-  const isSmallScreen = window.innerWidth <= 600;
   const lastIndex = isSmallScreen ? articles.length - 1 : articles.length - 3;
   const startSlide = activeIndex === 0;
   const endSlide = activeIndex === lastIndex;
@@ -33,6 +40,10 @@ const News: FC<NewsData> = ({ articles }) => {
   };
 
   const handleTouchMove: TouchEventHandler<HTMLDivElement> = (e) => {
+    if (isEdge) {
+      return null;
+    }
+
     const touchDown = ref.current;
     if (touchDown === null) {
       return;
@@ -41,17 +52,30 @@ const News: FC<NewsData> = ({ articles }) => {
     const currentTouch = e.touches[0].clientX;
     const diff = touchDown - currentTouch;
 
-    if (isEdge) {
-      return null;
-    } else {
-      if (diff > 5) {
-        nextSlide();
-      } else if (diff < -5) {
-        prevSlide();
-      }
-      ref.current = null;
+    if (diff > 5) {
+      nextSlide();
+    } else if (diff < -5) {
+      prevSlide();
     }
+    ref.current = null;
   };
+
+  const resizeListener = useCallback(
+    (event: UIEvent) => {
+      const checkIsSmallScreen = (event.view?.innerWidth ?? 0) <= 600;
+      if (checkIsSmallScreen !== isSmallScreen) {
+        setIsSmallScreen(checkIsSmallScreen);
+      }
+    },
+    [isSmallScreen],
+  );
+
+  useEffect(() => {
+    document.addEventListener("resize", resizeListener);
+    return () => {
+      document.removeEventListener("resize", resizeListener);
+    };
+  }, [resizeListener]);
 
   return (
     <section className={styles.news__section}>
@@ -67,29 +91,31 @@ const News: FC<NewsData> = ({ articles }) => {
         onTouchMove={handleTouchMove}
         className={styles.news__items}
       >
-        {articles.map((item, index) => (
-          <NewsCard
-            key={index + item.title}
-            {...item}
-            activeIndex={activeIndex}
-          />
-        ))}
+        {articles ? (
+          articles.map((item, index) => (
+            <NewsCard
+              key={index + item.title}
+              {...item}
+              activeIndex={activeIndex}
+            />
+          ))
+        ) : (
+          <p className={styles.section__description}>Пока новостей нет(</p>
+        )}
       </div>
       <div className={styles.items__buttons}>
         <DefaultButton
-          type={ButtonType.button}
-          radius={ButtonRadius.fifty}
+          buttonType={ButtonType.button}
           onClick={prevSlide}
-          className={startSlide ? styles.disabled : styles.buttonLeft}
+          className={`${startSlide ? styles.disabled : styles.buttonLeft} ${styles.radius}`}
           disabled={startSlide}
         >
           <img src={ArrowLeft} alt="left" />
         </DefaultButton>
         <DefaultButton
-          type={ButtonType.button}
-          radius={ButtonRadius.fifty}
+          buttonType={ButtonType.button}
           onClick={nextSlide}
-          className={endSlide ? styles.disabled : ""}
+          className={`${endSlide ? styles.disabled : ""} ${styles.radius}`}
           disabled={endSlide}
         >
           <img src={ArrowRight} alt="right" />

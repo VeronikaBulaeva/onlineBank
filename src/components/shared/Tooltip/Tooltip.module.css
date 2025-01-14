@@ -1,0 +1,16 @@
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    animation: ani 0.5s forwards;
+}
+
+.tooltip__text {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}

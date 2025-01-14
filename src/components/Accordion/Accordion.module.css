@@ -1,0 +1,78 @@
+.accordions {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.accordion__block {
+    width: 1300px;
+    border: 1px solid rgba(226, 232, 240, 1)
+}
+
+.accordion__button {
+    background-color: transparent;
+    height: 84px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 32px;
+    cursor: pointer;
+}
+
+.accordion {
+    overflow: hidden;
+    height: 0;
+    color: transparent;
+    padding-inline: 32px;
+    transition: all 0.5s ease;
+}
+
+.activeAccordion {
+    display: flex;
+    padding: 24px 32px;
+    height: 100px;
+    transition: all 0.5s ease;
+    color: rgba(123, 116, 84, 1);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.arrowIcon, .rotate {
+    transition: transform 0.6s ease;
+}
+
+.accordion__question {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(28, 28, 30, 1);
+
+}
+
+.accordion__answer {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 1300px) {
+    .accordion__block {
+        width: 100%;
+        padding-inline: 8px;
+    }
+
+    .activeAccordion {
+        height: max-content;
+    }
+
+    .accordion__button {
+        text-align: start;
+        height: 90px;
+        gap: 18px;
+        padding: 0;
+    }
+}

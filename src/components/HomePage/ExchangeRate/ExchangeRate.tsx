@@ -9,8 +9,9 @@ const ExchangeRate: FC = () => {
 
   const intervalId = useRef<NodeJS.Timeout>();
 
-  const getData = () => {
-    getCurrency().then(setData);
+  const getData = async () => {
+    const response = await getCurrency();
+    setData(response);
   };
 
   useEffect(() => {

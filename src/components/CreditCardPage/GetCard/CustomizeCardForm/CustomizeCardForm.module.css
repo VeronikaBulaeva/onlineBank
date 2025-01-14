@@ -1,0 +1,170 @@
+.form {
+    display: grid;
+    position: relative;
+    gap: 32px;
+    padding: 32px;
+    min-height: 584px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 0 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.form__top {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.customize__block {
+    display: grid;
+    gap: 32px;
+    padding-right: 40px;
+    border-right: 1px dashed rgba(128, 128, 128, 0.4)
+}
+
+.customize__text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.customize__title {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.input__block {
+    width: 568px;
+    height: 164px;
+    border-radius: 6px;
+    border: 1px solid rgba(91, 53, 213, 1);
+    padding: 24px;
+}
+
+.amount__block {
+    padding-left: 42px;
+}
+
+.amount__text, .step__text {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.step__text {
+    max-height: min-content;
+    padding-top: 7px;
+}
+
+.amount__text {
+    text-align: left;
+    padding-block: 16px 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    max-width: 220px;
+}
+
+.select__block {
+
+}
+
+.form__bottom {
+    display: grid;
+    gap: 26px;
+}
+
+.bottom__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.input {
+    width: 296px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: rgba(249, 245, 227, 1);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 10px 16px;
+    outline: none;
+}
+
+.input:focus, .input:focus-visible, .input:visited {
+    border: 1px solid rgba(91, 53, 213, 1);
+}
+
+.input::placeholder {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: rgba(128, 128, 128, 1);
+}
+
+.block__title {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+}
+
+.form__button {
+    width: 148px;
+    height: 48px;
+    max-width: none;
+    justify-self: flex-end;
+}
+
+@media screen and (max-width: 920px) {
+
+    .form__top {
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        border: none;
+    }
+
+    .customize__block {
+        width: 100%;
+        flex: 1;
+        min-width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    .amount__block {
+        padding-block: 20px;
+        padding-inline: 0;
+    }
+
+    .input__block {
+        width: 100%;
+    }
+
+    .form__button {
+        justify-self: flex-start;
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+    .customize__text {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .input {
+        width: auto;
+    }
+
+    .form__button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+.creditCardPage {
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-block: 20px 98px;
+    display: grid;
+    gap: 48px;
+}
+
+@media screen and (max-width: 1300px) {
+    .creditCardPage {
+        padding-inline: 8px;
+    }
+}

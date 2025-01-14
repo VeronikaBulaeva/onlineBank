@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactEventHandler, SyntheticEvent } from "react";
 import styles from "./NewsCard.module.css";
 import { Link } from "react-router-dom";
 import NewsImg from "@/assets/newsError.jpg";
@@ -15,7 +15,18 @@ const NewsCard: FC<NewsCardProps> = ({
   description,
   activeIndex,
 }) => {
-  const descriptionSubstring = description?.substring(0, 100) + "...";
+  const getSubstring = (string: string) => {
+    return string.length > 100 ? string.substring(0, 100) + "..." : string;
+  };
+
+  const handleError: ReactEventHandler<HTMLImageElement> | undefined = ({
+    currentTarget,
+  }: SyntheticEvent<HTMLImageElement>) => {
+    currentTarget.onerror = null;
+    currentTarget.src = NewsImg;
+  };
+
+  const slideImageStyle = `translateX(calc(-${activeIndex * 100}% - ${80 * activeIndex}px))`;
 
   return (
     <Link
@@ -24,28 +35,17 @@ const NewsCard: FC<NewsCardProps> = ({
       rel="noopener noreferrer"
       className={styles.newsCard}
       style={{
-        transform: `translateX(calc(-${activeIndex * 100}% - ${80 * activeIndex}px))`,
+        transform: slideImageStyle,
       }}
     >
       <div className={styles.newsCard__item}>
         <div className={styles.item__img}>
-          <img
-            src={urlToImage}
-            alt="image"
-            onError={({ currentTarget }) => {
-              currentTarget.onerror = null;
-              currentTarget.src = NewsImg;
-            }}
-          />
+          <img src={urlToImage} alt="image" onError={handleError} />
         </div>
-        <p
-          dangerouslySetInnerHTML={{ __html: title }}
-          className={styles.newsCard__title}
-        ></p>
-        <p
-          dangerouslySetInnerHTML={{ __html: descriptionSubstring }}
-          className={styles.newsCard__description}
-        ></p>
+        <p className={styles.newsCard__title}>{getSubstring(title)}</p>
+        <p className={styles.newsCard__description}>
+          {getSubstring(description)}
+        </p>
       </div>
     </Link>
   );

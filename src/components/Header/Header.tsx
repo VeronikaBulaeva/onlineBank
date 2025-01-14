@@ -1,22 +1,29 @@
 import { FC } from "react";
 import styles from "./header.module.css";
-import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
-import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
-import { Link } from "react-router-dom";
+import DefaultButton from "@/components/shared/DefaultButton/DefaultButton.tsx";
+import { ButtonType } from "@/components/shared/DefaultButton/types.ts";
+import { Link, NavLink } from "react-router-dom";
 import { headerLinks } from "@/constants/constants.tsx";
+import { HOME_PAGE_ROUTE } from "@/constants/routes.ts";
 
 const Header: FC = () => {
   return (
     <header className={styles.header}>
-      <h1 className={styles.header__logo}>NeoBank</h1>
+      <Link to={HOME_PAGE_ROUTE} className={styles.header__logo}>
+        NeoBank
+      </Link>
       <nav className={styles.header__menu}>
         {headerLinks.map(({ link, title }, index) => (
-          <Link to={link} key={index}>
+          <NavLink
+            to={link}
+            key={index}
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
             {title}
-          </Link>
+          </NavLink>
         ))}
       </nav>
-      <DefaultButton type={ButtonType.link} radius={ButtonRadius.sixteen}>
+      <DefaultButton buttonType={ButtonType.link} className={styles.radius}>
         <p>Online Bank</p>
       </DefaultButton>
     </header>

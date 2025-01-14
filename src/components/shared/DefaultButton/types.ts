@@ -3,16 +3,8 @@ export enum ButtonType {
   button = "button",
 }
 
-export enum ButtonRadius {
-  eight = "eight",
-  sixteen = "sixteen",
-  twenty = "twenty",
-  fifty = "fifty",
-}
-
 export interface ButtonProps {
-  type: ButtonType;
-  radius: ButtonRadius;
+  buttonType: ButtonType;
   className?: string;
   link?: string;
   onClick?: () => void;

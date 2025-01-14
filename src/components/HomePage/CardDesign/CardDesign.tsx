@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./CardDesign.module.css";
-import DefaultButton from "@/components/DefaultButton/DefaultButton.tsx";
-import { ButtonRadius, ButtonType } from "@/components/DefaultButton/types.ts";
+import DefaultButton from "@/components/shared/DefaultButton/DefaultButton.tsx";
+import { ButtonType } from "@/components/shared/DefaultButton/types.ts";
 import { card } from "@/constants/constants.tsx";
 
 const CardDesign: FC = () => {
@@ -10,8 +10,8 @@ const CardDesign: FC = () => {
       <div className={styles.cardDesign__choose}>
         <h1>Choose the design you like and apply for card right now</h1>
         <DefaultButton
-          type={ButtonType.link}
-          radius={ButtonRadius.sixteen}
+          buttonType={ButtonType.link}
+          className={styles.radius}
           link={""}
         >
           Choose the card

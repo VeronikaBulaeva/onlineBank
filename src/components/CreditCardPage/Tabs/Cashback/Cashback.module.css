@@ -1,0 +1,60 @@
+.cashback {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 48px;
+    opacity: 0;
+    animation: ani 1s forwards;
+}
+
+@keyframes ani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.cashback__item {
+    display: grid;
+    gap: 22px;
+    padding: 32px;
+    width: 406px;
+    height: 162px;
+    border-radius: 28px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 0 8px 0 rgba(0, 0, 0, 0.08);
+    background-color: rgba(234, 236, 238, 1);
+}
+
+.cashback__item:nth-child(even) {
+    background-color: rgba(136, 179, 184, 0.6);
+}
+
+.item__title {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: rgba(67, 67, 67, 0.9);
+}
+
+.item__description {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 52px;
+    color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 920px) {
+    .cashback {
+        gap: 20px;
+        padding-top: 24px;
+    }
+
+    .cashback__item:nth-child(even), .cashback__item {
+        width: 100%
+    }
+}

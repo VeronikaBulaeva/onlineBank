@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./SubscribeNewsletter.module.css";
-import SubscribeInput from "@/components/SubscribeInput/SubscribeInput.tsx";
+import SubscribeInput from "@/components/shared/SubscribeInput/SubscribeInput.tsx";
 
 const SubscribeNewsletter: FC = () => {
   return (
