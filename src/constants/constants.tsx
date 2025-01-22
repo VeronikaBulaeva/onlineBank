@@ -328,3 +328,87 @@ export const selectOptions: OptionType[] = [
     label: "24 month",
   },
 ];
+
+export const gender: OptionType[] = [
+  {
+    value: "",
+    label: "",
+  },
+  {
+    value: "MALE",
+    label: "MALE",
+  },
+  {
+    value: "FEMALE",
+    label: "FEMALE",
+  },
+];
+
+export const maritalStatus: OptionType[] = [
+  {
+    value: "",
+    label: "",
+  },
+  {
+    value: "MARRIED",
+    label: "MARRIED",
+  },
+  {
+    value: "DIVORCED",
+    label: "DIVORCED",
+  },
+  {
+    value: "SINGLE",
+    label: "SINGLE",
+  },
+  {
+    value: "WIDOW_WIDOWER",
+    label: "WIDOW WIDOWER",
+  },
+];
+
+export const employmentStatus: OptionType[] = [
+  {
+    value: "",
+    label: "",
+  },
+  {
+    value: "UNEMPLOYED",
+    label: "UNEMPLOYED",
+  },
+  {
+    value: "SELF_EMPLOYED",
+    label: "SELF EMPLOYED",
+  },
+  {
+    value: "EMPLOYED",
+    label: "EMPLOYED",
+  },
+  {
+    value: "BUSINESS_OWNER",
+    label: "BUSINESS OWNER",
+  },
+];
+
+export const position: OptionType[] = [
+  {
+    value: "",
+    label: "",
+  },
+  {
+    value: "WORKER",
+    label: "WORKER",
+  },
+  {
+    value: "MID_MANAGER",
+    label: "MID MANAGER",
+  },
+  {
+    value: "TOP_MANAGER",
+    label: "TOP MANAGER",
+  },
+  {
+    value: "OWNER",
+    label: "OWNER",
+  },
+];

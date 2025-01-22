@@ -4,6 +4,7 @@
     padding-inline: 8px;
     padding-block: 7px;
     display: flex;
+    gap: 12px;
     align-items: center;
     justify-content: space-between;
 }

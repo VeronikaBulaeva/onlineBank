@@ -1,1 +1,54 @@
+.errorPage {
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-block: 20px 98px;
+    display: flex;
+    justify-content: space-between;
+}
 
+.textBlock {
+    display: grid;
+    gap: 32px;
+    justify-items: flex-start;
+    align-content: center;
+}
+
+.textBlock__title {
+    font-weight: 700;
+}
+
+.textBlock__text, .textBlock__description {
+    font-weight: 500;
+}
+
+.textBlock__title, .textBlock__text {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 30px;
+    line-height: 32px;
+    color: rgba(28, 28, 30, 1);
+}
+
+.textBlock__description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    color: rgba(75, 75, 75, 1);
+}
+
+.button {
+    width: 148px;
+    height: 48px;
+    max-width: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .errorPage {
+        padding-inline: 8px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .button {
+        width: 100%;
+    }
+}
