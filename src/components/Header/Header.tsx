@@ -15,6 +15,7 @@ const Header: FC = () => {
       <nav className={styles.header__menu}>
         {headerLinks.map(({ link, title }, index) => (
           <NavLink
+            data-testid={title}
             to={link}
             key={index}
             className={({ isActive }) => (isActive ? styles.active : "")}

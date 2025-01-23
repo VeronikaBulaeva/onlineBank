@@ -18,6 +18,7 @@ const TextInput: FC<
           <label className={`${styles.label}`}>
             <p className={`${isRequired(rest)}`}>{labelText}</p>
             <input
+              data-testid={name}
               name={field.name}
               onChange={field.onChange}
               className={`${
@@ -29,7 +30,11 @@ const TextInput: FC<
               {...rest}
             />
           </label>
-          {error && <div className={styles.errorMessage}>{error.message}</div>}
+          {error && (
+            <div className={styles.errorMessage} data-testid="error">
+              {error.message}
+            </div>
+          )}
         </div>
       )}
     />

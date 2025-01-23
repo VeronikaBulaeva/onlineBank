@@ -13,6 +13,7 @@ const Accordion: FC<AccordionProps> = ({
       {accordions.map((accordion, index) => (
         <div key={index} className={styles.accordion__block}>
           <button
+            data-testid={`arrowButton${accordion.id}`}
             className={styles.accordion__button}
             onClick={() => onClick(accordion)}
           >
@@ -28,6 +29,7 @@ const Accordion: FC<AccordionProps> = ({
             />
           </button>
           <div
+            data-testid={`answerBlock${accordion.id}`}
             className={
               activeAccordion?.id === accordion.id
                 ? styles.activeAccordion

@@ -28,6 +28,7 @@ const RangeInput: FC<
             <p className={`${isRequired(rest)}`}>{labelText}</p>
             {amount && <p className={styles.amount}>{amount}</p>}
             <input
+              data-testid={name}
               name={field.name}
               onChange={field.onChange}
               className={`${styles.range} ${className}`}
@@ -42,7 +43,11 @@ const RangeInput: FC<
             <p className={styles.range__text}>{min.toLocaleString()}</p>
             <p className={styles.range__text}>{max.toLocaleString()}</p>
           </div>
-          {error && <div className={styles.errorMessage}>{error.message}</div>}
+          {error && (
+            <div className={styles.errorMessage} data-testid="error">
+              {error.message}
+            </div>
+          )}
         </div>
       )}
     />

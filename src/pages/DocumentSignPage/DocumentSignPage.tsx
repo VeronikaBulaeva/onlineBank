@@ -80,6 +80,7 @@ const DocumentSignPage: FC = () => {
                 type={"checkbox"}
                 className={styles.checkbox}
                 onChange={() => setDisable(!disable)}
+                data-testid="agree"
               />
               <p className={styles.checkbox__text}>I agree</p>
             </label>
@@ -88,6 +89,7 @@ const DocumentSignPage: FC = () => {
               className={`${disable && styles.disabled} ${styles.send__button}`}
               disabled={disable}
               onClick={handleClick}
+              data-testid="send"
             >
               Send
             </DefaultButton>

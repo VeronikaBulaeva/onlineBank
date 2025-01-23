@@ -25,6 +25,7 @@ const DefaultMaskInput: FC<
           <label className={styles.label}>
             <p className={`${isRequired(rest)}`}>{labelText}</p>
             <InputMask
+              data-testid={name}
               name={field.name}
               onChange={field.onChange}
               className={`${error && styles.errorInput} ${
@@ -35,7 +36,11 @@ const DefaultMaskInput: FC<
               required
             />
           </label>
-          {error && <div className={styles.errorMessage}>{error.message}</div>}
+          {error && (
+            <div className={styles.errorMessage} data-testid="error">
+              {error.message}
+            </div>
+          )}
         </div>
       )}
     />

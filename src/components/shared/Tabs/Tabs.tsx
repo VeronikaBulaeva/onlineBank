@@ -17,6 +17,7 @@ const Tabs: FC<TabsProps> = ({ tabs, onClick, activeTab }) => {
     <div className={styles.tabs}>
       {tabs.map((tab, index) => (
         <button
+          data-testid={`tabsButton${tab.id}`}
           key={index}
           className={activeTab.id === tab.id ? styles.activeTab : styles.tab}
           onClick={() => onClick(tab)}

@@ -80,7 +80,7 @@ const ApplicationIdForm: FC = () => {
   };
 
   const getStatus = async (dataId: string) => {
-    const dataStatus = await getCreditDataById(dataId).then();
+    const dataStatus = await getCreditDataById(dataId);
     if (dataStatus.data.status === "CC_DENIED" && id) {
       await dispatch(removeApplicationId(+id));
       navigate(HOME_PAGE_ROUTE);
@@ -219,6 +219,7 @@ const ApplicationIdForm: FC = () => {
               buttonType={ButtonType.button}
               type="submit"
               className={styles.form__button}
+              data-testid="submit"
             >
               {isLoading ? "Loading..." : "Continue"}
             </DefaultButton>

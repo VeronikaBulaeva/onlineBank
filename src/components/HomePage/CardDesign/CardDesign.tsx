@@ -20,7 +20,7 @@ const CardDesign: FC = () => {
       </div>
       <div className={styles.cardDesign__design}>
         {card.map(({ img, alt }, index) => (
-          <img src={img} alt={alt} key={index} />
+          <img data-testid={alt + index} src={img} alt={alt} key={index} />
         ))}
       </div>
     </section>

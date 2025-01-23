@@ -1,0 +1,64 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ConfirmationCodePage > Отрисовка компонента 1`] = `
+<div>
+  <div
+    class="_wrapper_81e6f5"
+  >
+    <div
+      class="_grid_a6bf51"
+    >
+      <p
+        class="_title_a6bf51"
+      >
+        Please enter confirmation code
+      </p>
+      <div
+        class="_input__block_a6bf51"
+      >
+        <input
+          class="_invisible_a6bf51"
+          data-testid="codeInput"
+          type="text"
+        />
+        <p
+          class="_input_a6bf51"
+          data-testid="clickText0"
+        >
+          <img
+            alt="ellipse"
+            src="/src/assets/ellipse.svg"
+          />
+        </p>
+        <p
+          class="_input_a6bf51"
+          data-testid="clickText1"
+        >
+          <img
+            alt="ellipse"
+            src="/src/assets/ellipse.svg"
+          />
+        </p>
+        <p
+          class="_input_a6bf51"
+          data-testid="clickText2"
+        >
+          <img
+            alt="ellipse"
+            src="/src/assets/ellipse.svg"
+          />
+        </p>
+        <p
+          class="_input_a6bf51"
+          data-testid="clickText3"
+        >
+          <img
+            alt="ellipse"
+            src="/src/assets/ellipse.svg"
+          />
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,632 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CreditCardPage > Отрисовка компонента 1`] = `
+<div>
+  <main
+    class="_creditCardPage_7964db"
+  >
+    <section
+      class="_applyCard_233311"
+    >
+      <div
+        class="_applyCard__information_233311"
+      >
+        <h1
+          class="_applyCard__title_233311"
+        >
+          Platinum digital credit card
+        </h1>
+        <p
+          class="_applyCard__description_233311"
+        >
+          Our best credit card. Suitable for everyday spending and shopping. Cash withdrawals and transfers without commission and interest.
+        </p>
+        <div
+          class="_cardInformation_233311"
+        >
+          <div
+            class="_cardInformation__item_3483ca"
+          >
+            <p
+              class="_cardInformation__title_3483ca"
+            >
+              Up to 160 days
+            </p>
+            <p
+              class="_cardInformation__description_3483ca"
+            >
+              No percent
+            </p>
+            <div
+              class="_tooltip_e0ece6 _cardInformation__tooltip_3483ca"
+            >
+              <p
+                class="_tooltip__text_e0ece6 undefined"
+              >
+                When repaying the full debt up to 160 days
+              </p>
+            </div>
+          </div>
+          <div
+            class="_cardInformation__item_3483ca"
+          >
+            <p
+              class="_cardInformation__title_3483ca"
+            >
+              Up to 600 000 ₽
+            </p>
+            <p
+              class="_cardInformation__description_3483ca"
+            >
+              Credit limit
+            </p>
+            <div
+              class="_tooltip_e0ece6 _cardInformation__tooltip_3483ca"
+            >
+              <p
+                class="_tooltip__text_e0ece6 undefined"
+              >
+                Over the limit willaccrue percent
+              </p>
+            </div>
+          </div>
+          <div
+            class="_cardInformation__item_3483ca"
+          >
+            <p
+              class="_cardInformation__title_3483ca"
+            >
+              0 ₽
+            </p>
+            <p
+              class="_cardInformation__description_3483ca"
+            >
+              Card service is free
+            </p>
+            <div
+              class="_tooltip_e0ece6 _cardInformation__tooltip_3483ca"
+            >
+              <p
+                class="_tooltip__text_e0ece6 undefined"
+              >
+                Promotion valid until December 31, 2022.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="_button_148529 _applyCard__button_233311"
+          data-testid="applyCard"
+        >
+          <p>
+            Apply for card
+          </p>
+        </button>
+      </div>
+      <div>
+        <img
+          alt="credit card"
+          height="226"
+          src="/src/assets/creditCard.png"
+          width="380"
+        />
+      </div>
+    </section>
+    <section>
+      <div
+        class="_tabs_f43b63"
+      >
+        <button
+          class="_activeTab_f43b63"
+          data-testid="tabsButton1"
+        >
+          About card
+        </button>
+        <button
+          class="_tab_f43b63"
+          data-testid="tabsButton2"
+        >
+          Rates and conditions
+        </button>
+        <button
+          class="_tab_f43b63"
+          data-testid="tabsButton3"
+        >
+          Cashback
+        </button>
+        <button
+          class="_tab_f43b63"
+          data-testid="tabsButton4"
+        >
+          FAQ
+        </button>
+      </div>
+      <div
+        class="_aboutCard_430a9d"
+      >
+        <div
+          class="_aboutCard__item_430a9d"
+        >
+          <img
+            alt="image"
+            src="/src/assets/aboutCardIcon1.svg"
+          />
+          <p
+            class="_item__title_430a9d"
+          >
+            Up to 50 000 ₽
+          </p>
+          <p
+            class="_item__description_430a9d"
+          >
+            Cash and transfers without commission and percent
+          </p>
+        </div>
+        <div
+          class="_aboutCard__item_430a9d"
+        >
+          <img
+            alt="image"
+            src="/src/assets/aboutCardIcon2.svg"
+          />
+          <p
+            class="_item__title_430a9d"
+          >
+            Up to 160 days
+          </p>
+          <p
+            class="_item__description_430a9d"
+          >
+            Without percent on the loan
+          </p>
+        </div>
+        <div
+          class="_aboutCard__item_430a9d"
+        >
+          <img
+            alt="image"
+            src="/src/assets/aboutCardIcon3.svg"
+          />
+          <p
+            class="_item__title_430a9d"
+          >
+            Free delivery
+          </p>
+          <p
+            class="_item__description_430a9d"
+          >
+            We will deliver your card by courier at a convenient place and time for you
+          </p>
+        </div>
+        <div
+          class="_aboutCard__item_430a9d"
+        >
+          <img
+            alt="image"
+            src="/src/assets/aboutCardIcon4.svg"
+          />
+          <p
+            class="_item__title_430a9d"
+          >
+            Up to 12 months
+          </p>
+          <p
+            class="_item__description_430a9d"
+          >
+            No percent. For equipment, clothes and other purchases in installments
+          </p>
+        </div>
+        <div
+          class="_aboutCard__item_430a9d"
+        >
+          <img
+            alt="image"
+            src="/src/assets/aboutCardIcon5.svg"
+          />
+          <p
+            class="_item__title_430a9d"
+          >
+            Convenient deposit and withdrawal
+          </p>
+          <p
+            class="_item__description_430a9d"
+          >
+            At any ATM. Top up your credit card for free with cash or transfer from other cards
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="_getCard_9107cf"
+      id="getCard"
+    >
+      <h2
+        class="_getCard__title_9107cf"
+      >
+        How to get a card
+      </h2>
+      <div
+        class="_getCard__block_9107cf"
+      >
+        <div
+          class="_block__item_9107cf"
+        >
+          <div
+            class="_item__step_9107cf"
+          >
+            <div
+              class="_step__number_9107cf"
+            >
+              <p
+                class="_step__text_9107cf"
+              >
+                1
+              </p>
+            </div>
+            <div
+              class="_divider_1aae68"
+            />
+          </div>
+          <p
+            class="_item__text_9107cf"
+          >
+            Fill out an online application - you do not need to visit the bank
+          </p>
+        </div>
+        <div
+          class="_block__item_9107cf"
+        >
+          <div
+            class="_item__step_9107cf"
+          >
+            <div
+              class="_step__number_9107cf"
+            >
+              <p
+                class="_step__text_9107cf"
+              >
+                2
+              </p>
+            </div>
+            <div
+              class="_divider_1aae68"
+            />
+          </div>
+          <p
+            class="_item__text_9107cf"
+          >
+            Find out the bank's decision immediately after filling out the application
+          </p>
+        </div>
+        <div
+          class="_block__item_9107cf"
+        >
+          <div
+            class="_item__step_9107cf"
+          >
+            <div
+              class="_step__number_9107cf"
+            >
+              <p
+                class="_step__text_9107cf"
+              >
+                3
+              </p>
+            </div>
+            <div
+              class="_divider_1aae68"
+            />
+          </div>
+          <p
+            class="_item__text_9107cf"
+          >
+            The bank will deliver the card free of charge, wherever convenient, to your city
+          </p>
+        </div>
+      </div>
+      <form
+        class="_form_454a31"
+        data-testid="customizeCardForm"
+        name="customizeCardForm"
+        novalidate=""
+      >
+        <div
+          class="_form__top_454a31"
+        >
+          <div
+            class="_customize__block_454a31"
+          >
+            <div
+              class="_customize__text_454a31"
+            >
+              <p
+                class="_customize__title_454a31"
+              >
+                Customize your card
+              </p>
+              <p
+                class="_step__text_454a31"
+              >
+                Step 1 of 5
+              </p>
+            </div>
+            <div
+              class="_input__block_454a31"
+            >
+              <div
+                class="_input__block_8f3183"
+              >
+                <label
+                  class="_label_8f3183"
+                >
+                  <p
+                    class="null"
+                  >
+                    Select amount
+                  </p>
+                  <p
+                    class="_amount_8f3183"
+                  >
+                    150 000
+                  </p>
+                  <input
+                    class="_range_8f3183 undefined"
+                    data-testid="amount"
+                    max="600000"
+                    min="15000"
+                    name="amount"
+                    placeholder="Select amount"
+                    step="15000"
+                    type="range"
+                    value="150000"
+                  />
+                </label>
+                <div
+                  class="_range__textBlock_8f3183"
+                >
+                  <p
+                    class="_range__text_8f3183"
+                  >
+                    15 000
+                  </p>
+                  <p
+                    class="_range__text_8f3183"
+                  >
+                    600 000
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_amount__block_454a31"
+          >
+            <p
+              class="_block__title_454a31"
+            >
+              You have chosen the amount
+            </p>
+            <p
+              class="_amount__text_454a31"
+            >
+              150 000
+               ₽
+            </p>
+          </div>
+        </div>
+        <div
+          class="_form__bottom_454a31"
+        >
+          <p
+            class="_block__title_454a31"
+          >
+            Contact Information
+          </p>
+          <div
+            class="_bottom__inputs_454a31"
+          >
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Your last name
+                </p>
+                <input
+                  class="false _input_454a31"
+                  data-testid="lastName"
+                  id="input"
+                  name="lastName"
+                  placeholder="For Example Doe"
+                  required=""
+                />
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Your first name
+                </p>
+                <input
+                  class="false _input_454a31"
+                  data-testid="firstName"
+                  id="input"
+                  name="firstName"
+                  placeholder="For Example Jhon"
+                  required=""
+                />
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="null"
+                >
+                  Your patronymic
+                </p>
+                <input
+                  class="false _input_454a31"
+                  data-testid="middleName"
+                  id="input"
+                  name="middleName"
+                  placeholder="For Example Victorovich"
+                />
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Select term
+                </p>
+                <select
+                  class="_input_454a31"
+                  data-testid="term"
+                  id="term"
+                  name="term"
+                  required=""
+                >
+                  <option
+                    class="_option_8f3183"
+                    value="6"
+                  >
+                    6 month
+                  </option>
+                  <option
+                    class="_option_8f3183"
+                    value="12"
+                  >
+                    12 month
+                  </option>
+                  <option
+                    class="_option_8f3183"
+                    value="18"
+                  >
+                    18 month
+                  </option>
+                  <option
+                    class="_option_8f3183"
+                    value="24"
+                  >
+                    24 month
+                  </option>
+                </select>
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Your email
+                </p>
+                <input
+                  class="false _input_454a31"
+                  data-testid="email"
+                  id="input"
+                  name="email"
+                  placeholder="test@gmail.com"
+                  required=""
+                />
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Your date of birth
+                </p>
+                <input
+                  class="undefined false _input_454a31"
+                  data-testid="birthdate"
+                  name="birthdate"
+                  placeholder="Select Date and Time"
+                  required=""
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Your passport series
+                </p>
+                <input
+                  class="undefined false _input_454a31"
+                  data-testid="passportSeries"
+                  name="passportSeries"
+                  placeholder="0000"
+                  required=""
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="_input__block_8f3183"
+            >
+              <label
+                class="_label_8f3183"
+              >
+                <p
+                  class="_required_8f3183"
+                >
+                  Your passport number
+                </p>
+                <input
+                  class="undefined false _input_454a31"
+                  data-testid="passportNumber"
+                  name="passportNumber"
+                  placeholder="000000"
+                  required=""
+                  value=""
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+        <button
+          class="_button_148529 _form__button_454a31"
+          data-testid="submit"
+          type="submit"
+        >
+          Continue
+        </button>
+      </form>
+    </section>
+  </main>
+</div>
+`;

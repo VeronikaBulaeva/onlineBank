@@ -13,6 +13,7 @@ import {
   setApplicationId,
   setCreditOffers,
 } from "@/app/store/slices/creditSlice.ts";
+import { numberWithSpaces } from "@/lib/numberWithSpaces.ts";
 
 const CreditOffer: FC<CreditOfferType> = (offer) => {
   const dispatch = useAppDispatch();
@@ -39,14 +40,14 @@ const CreditOffer: FC<CreditOfferType> = (offer) => {
       <img src={OfferImage} alt="offer" width={150} height={150} />
       <div className={styles.offer__description}>
         <p className={styles.text}>
-          Requested amount: {requestedAmount.toLocaleString()} ₽
+          Requested amount: {numberWithSpaces(requestedAmount)} ₽
         </p>
         <p className={styles.text}>
-          Total amount: {totalAmount.toLocaleString()} ₽
+          Total amount: {numberWithSpaces(totalAmount)} ₽
         </p>
         <p className={styles.text}>For {term} months</p>
         <p className={styles.text}>
-          Monthly payment: {monthlyPayment.toLocaleString()} ₽
+          Monthly payment: {numberWithSpaces(monthlyPayment)} ₽
         </p>
         <p className={styles.text}>Your rate: {rate}%</p>
         <p className={`${styles.boolean} ${styles.text}`}>
@@ -72,6 +73,7 @@ const CreditOffer: FC<CreditOfferType> = (offer) => {
         buttonType={ButtonType.button}
         className={styles.button}
         onClick={handleClick}
+        data-testid="chooseOffer"
       >
         Select
       </DefaultButton>

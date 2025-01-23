@@ -53,6 +53,7 @@ const CodeConfirmation: FC = () => {
           <p className={styles.title}>Please enter confirmation code</p>
           <div className={styles.input__block}>
             <input
+              data-testid="codeInput"
               type="text"
               onChange={(event) => {
                 setCode(event.target.value);
@@ -67,6 +68,7 @@ const CodeConfirmation: FC = () => {
                 onClick={() => {
                   ref.current?.focus();
                 }}
+                data-testid={`clickText${index}`}
               >
                 {code[index] ? (
                   code[index]

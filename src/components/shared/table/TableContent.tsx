@@ -9,7 +9,11 @@ const TableContent: FC<TableType> = ({ content, columns }) => {
       {content.map((data) => (
         <tr key={data.number}>
           {columns.map((column) => (
-            <td key={column} className={styles.table__cell}>
+            <td
+              key={column}
+              className={styles.table__cell}
+              data-testid={`content${column}`}
+            >
               {data[getCamelCase(column)]}
             </td>
           ))}
