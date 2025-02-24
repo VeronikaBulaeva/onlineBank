@@ -16,7 +16,11 @@ const UsedFunctions: FC = () => {
         </p>
         <div className={styles.info__list}>
           {features.map((title, index) => (
-            <div className={styles.list__items} key={index}>
+            <div
+              data-testid={`${title}`}
+              className={styles.list__items}
+              key={index}
+            >
               <img src={Check} alt="check" />
               <p>{title}</p>
             </div>

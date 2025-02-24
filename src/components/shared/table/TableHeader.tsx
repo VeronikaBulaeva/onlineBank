@@ -25,6 +25,7 @@ const TableHeader: FC<TableHeaderProps> = ({
                 onClickSort(getCamelCase(column));
               }}
               className={styles.button}
+              data-testid={column}
             >
               {column}
               <img

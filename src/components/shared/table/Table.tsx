@@ -2,10 +2,7 @@ import { FC, useEffect, useState } from "react";
 import TableHeader from "./TableHeader.tsx";
 import styles from "./Table.module.css";
 import TableContent from "./TableContent.tsx";
-import {
-  TableContentType,
-  TableType,
-} from "@/components/shared/table/types.ts";
+import { TableContentType, TableType } from "./types.ts";
 
 const Table: FC<TableType> = ({ content, columns }) => {
   const [sorted, setSorted] = useState<TableContentType[]>([]);

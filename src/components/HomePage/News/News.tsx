@@ -25,9 +25,7 @@ const News: FC<NewsData> = ({ articles }) => {
   const isEdge = startSlide || endSlide;
 
   const prevSlide = () => {
-    if (activeIndex === 0) {
-      setActiveIndex(lastIndex);
-    } else {
+    if (activeIndex > 0) {
       setActiveIndex((prevState) => prevState - 1);
     }
   };
@@ -91,7 +89,7 @@ const News: FC<NewsData> = ({ articles }) => {
         onTouchMove={handleTouchMove}
         className={styles.news__items}
       >
-        {articles ? (
+        {articles.length ? (
           articles.map((item, index) => (
             <NewsCard
               key={index + item.title}
@@ -109,6 +107,7 @@ const News: FC<NewsData> = ({ articles }) => {
           onClick={prevSlide}
           className={`${startSlide ? styles.disabled : styles.buttonLeft} ${styles.radius}`}
           disabled={startSlide}
+          data-testid={"prev-slide"}
         >
           <img src={ArrowLeft} alt="left" />
         </DefaultButton>
@@ -117,6 +116,7 @@ const News: FC<NewsData> = ({ articles }) => {
           onClick={nextSlide}
           className={`${endSlide ? styles.disabled : ""} ${styles.radius}`}
           disabled={endSlide}
+          data-testid={"next-slide"}
         >
           <img src={ArrowRight} alt="right" />
         </DefaultButton>

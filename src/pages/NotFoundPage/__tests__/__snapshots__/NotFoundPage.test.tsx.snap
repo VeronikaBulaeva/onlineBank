@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LoanPage > renders correctly 1`] = `
+<div>
+  <section
+    class="_errorPage_9c8518"
+  >
+    <div
+      class="_textBlock_9c8518"
+    >
+      <p
+        class="_textBlock__title_9c8518"
+      >
+        Oops....
+      </p>
+      <p
+        class="_textBlock__text_9c8518"
+      >
+        Page not found
+      </p>
+      <p
+        class="_textBlock__description_9c8518"
+      >
+        This Page doesn\`t exist or was removed! We suggest you go back.
+      </p>
+      <a
+        class="_button_148529 _button_9c8518"
+        href="/"
+      >
+        <p>
+          Go back
+        </p>
+      </a>
+    </div>
+    <div>
+      <img
+        alt="error"
+        src="/src/assets/error404.svg"
+      />
+    </div>
+  </section>
+</div>
+`;

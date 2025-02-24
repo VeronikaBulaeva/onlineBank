@@ -7,7 +7,7 @@ import TextBlock from "@/components/shared/TextBlock/TextBlock.tsx";
 const getOffersContent = (offers: CreditOfferType[] | null) => {
   if (!offers) {
     return (
-      <div className={styles.email__block}>
+      <div className={styles.email__block} data-testid="chosenOffer">
         <TextBlock
           title="The preliminary decision has been sent to your email."
           description="In the letter you can get acquainted with the preliminary decision on
@@ -18,7 +18,7 @@ const getOffersContent = (offers: CreditOfferType[] | null) => {
   }
   if (offers.length) {
     return (
-      <div className={styles.offers}>
+      <div className={styles.offers} data-testid="offers">
         {offers.map((offer, index) => (
           <CreditOffer {...offer} key={index + offer.applicationId} />
         ))}

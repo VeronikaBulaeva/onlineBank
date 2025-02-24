@@ -37,6 +37,7 @@ const NewsCard: FC<NewsCardProps> = ({
       style={{
         transform: slideImageStyle,
       }}
+      data-testid={`news${title}`}
     >
       <div className={styles.newsCard__item}>
         <div className={styles.item__img}>

@@ -16,6 +16,7 @@ const Modal: FC<PropsWithChildren<IModal>> = ({
     <div
       className={`${styles.modal} ${active && styles.modalActive}`}
       onClick={onClose}
+      data-testid="close"
     >
       <div
         className={`${styles.modalContent} ${active && styles.modalContentActive}`}

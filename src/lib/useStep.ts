@@ -20,7 +20,7 @@ const useStep = (step: number, id?: string) => {
         return;
       }
       const currentStep = appIdsStep[id];
-      if (id && currentStep < step) {
+      if (currentStep < step) {
         dispatch(setAppIdStep({ id, step }));
       }
     }

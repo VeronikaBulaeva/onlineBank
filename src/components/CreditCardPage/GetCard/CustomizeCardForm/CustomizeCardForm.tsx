@@ -18,6 +18,7 @@ import { PrescoringFormData } from "@/components/types.ts";
 import RangeInput from "@/components/shared/Inputs/RangeInput.tsx";
 import { useAppDispatch } from "@/app/store/hooks.ts";
 import { setCreditOffers } from "@/app/store/slices/creditSlice.ts";
+import { numberWithSpaces } from "@/lib/numberWithSpaces.ts";
 
 const defaultValues = {
   term: selectOptions[0].value,
@@ -54,10 +55,6 @@ const CustomizeCardForm: FC = () => {
 
   const amount = methods.watch("amount").toLocaleString();
 
-  const numberWithSpaces = (number: number | string) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  };
-
   return (
     <FormProvider {...methods}>
       <form
@@ -65,6 +62,7 @@ const CustomizeCardForm: FC = () => {
         name="customizeCardForm"
         noValidate
         onSubmit={methods.handleSubmit(onSubmit)}
+        data-testid="customizeCardForm"
       >
         {isLoading && <Loader />}
         <div className={styles.form__top}>
@@ -160,6 +158,7 @@ const CustomizeCardForm: FC = () => {
           buttonType={ButtonType.button}
           type="submit"
           className={styles.form__button}
+          data-testid="submit"
         >
           {isLoading ? "Loading..." : "Continue"}
         </DefaultButton>

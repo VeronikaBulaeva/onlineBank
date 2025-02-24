@@ -108,6 +108,7 @@ const DocumentPage: FC = () => {
                 buttonType={ButtonType.button}
                 className={styles.deny__button}
                 onClick={() => setModalActive(true)}
+                data-testid="deny"
               >
                 Deny
               </DefaultButton>
@@ -117,6 +118,7 @@ const DocumentPage: FC = () => {
                   type={"checkbox"}
                   className={styles.checkbox}
                   onChange={() => setDisable(!disable)}
+                  data-testid="agree"
                 />
                 <p className={styles.checkbox__text}>
                   I agree with the payment schedule
@@ -128,6 +130,7 @@ const DocumentPage: FC = () => {
               className={`${disable && styles.disabled} ${styles.send__button}`}
               disabled={disable}
               onClick={handleClick}
+              data-testid="send"
             >
               Send
             </DefaultButton>
@@ -153,6 +156,7 @@ const DocumentPage: FC = () => {
               modalClosing();
               denyClick();
             }}
+            data-testid="approveDeny"
           >
             Deny
           </DefaultButton>

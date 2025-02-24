@@ -34,6 +34,7 @@ const ApplyCard: FC = () => {
           buttonType={ButtonType.link}
           className={styles.applyCard__button}
           onClick={scrollToElement}
+          data-testid="applyCard"
         >
           <p>
             {offers

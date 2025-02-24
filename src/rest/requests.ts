@@ -20,7 +20,7 @@ const getData = async <T>(url: string): Promise<T | undefined> => {
 
 export const getCurrency = async () => {
   const data = await getData<GetCurrencyType>(
-    ` https://v6.exchangerate-api.com/v6/63541ba2a3195fa2537793ad/latest/RUB`,
+    `https://v6.exchangerate-api.com/v6/63541ba2a3195fa2537793ad/latest/RUB`,
   );
   return data?.conversion_rates;
 };

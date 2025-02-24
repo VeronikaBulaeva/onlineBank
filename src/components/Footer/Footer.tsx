@@ -12,8 +12,12 @@ const Footer: FC = () => {
           <div className={styles.footer__social}>
             <img src={Logo} alt="logo" />
             <address className={styles.footer__info}>
-              <a href="tel:+74959842513">+7 (495) 984 25 13</a>
-              <a href="mailto:info@neoflex.ru">info@neoflex.ru</a>
+              <a data-testid="footerTel" href="tel:+74959842513">
+                +7 (495) 984 25 13
+              </a>
+              <a data-testid="footerMail" href="mailto:info@neoflex.ru">
+                info@neoflex.ru
+              </a>
             </address>
           </div>
           <nav className={styles.footer__menu}>

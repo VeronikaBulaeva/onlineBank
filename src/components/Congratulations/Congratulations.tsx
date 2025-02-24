@@ -37,7 +37,7 @@ const Congratulations: FC = () => {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="congratulations">
       <img src={Box} alt="box" width={150} height={150} />
       <p className={styles.title}>
         Congratulations! You have completed your new credit card.
